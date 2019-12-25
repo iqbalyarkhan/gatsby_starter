@@ -4,6 +4,7 @@ module.exports = {
     subtitle: `Software Engineer`,
     description: `A minimal blog starter built with Gatsbyjs. The needed Gatsby files are included.`,
     author: `Iqbal Khan`,
+    url: `iqbalyarkhan.github.io`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

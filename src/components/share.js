@@ -9,10 +9,17 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
+import {
+  LinkedinShareButton,
+  TwitterShareButton,
+  RedditShareButton,
+  LinkedinIcon,
+  TwitterIcon,
+  RedditIcon
+} from 'react-share';
 
 import Header from "./header"
 import "./layout.css"
-import Share from "./share"
 
 const Content = styled.div`
   margin: 0 auto;
@@ -30,10 +37,10 @@ const Footer = styled.footer`
   justify-content: center;
 `
 
-const Layout = ({ children }) => (
+const Share = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query TitleQuery {
         site {
           siteMetadata {
             title
@@ -43,23 +50,18 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <p>DATA IS: {JSON.stringify(data)}</p>
-        <Header siteTitle={data.site.siteMetadata.title} />
         <Content>
-          <main>{children}</main>
-          <Footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <GatsbyLink href="https://www.gatsbyjs.org">Gatsby</GatsbyLink>
-          </Footer>
+          <RedditShareButton url='google.com'>
+            <RedditIcon size={48} round={true}/>
+          </RedditShareButton>
         </Content>
       </>
     )}
   />
 )
 
-Layout.propTypes = {
+Share.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default Share

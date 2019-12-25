@@ -28,18 +28,9 @@ Paragraph
 
 ---
 
-`const foo = bar`
-
-```javascript{numberLines}
-const foo = bar
-console.log(foo);
-```
-
----
-
-| Hello | World |
-|-------|------ |
-| Foo   | Bar   |
+| Hello | World | Third Column |
+|-------|------ | ------------
+| Foo   | Bar   | Baaz         |
 
 
 
